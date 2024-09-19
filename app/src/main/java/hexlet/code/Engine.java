@@ -28,4 +28,16 @@ public class Engine {
     public static int getGameAttempts() {
         return GAME_ATTEMPTS;
     }
+
+    public static void checkAnswer(String userAnswer, String correctAnswer) {
+
+        if (userAnswer.equals(correctAnswer)) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                    + correctAnswer + "'.");
+            System.out.println("Let's try again, " + getUserName() + "!");
+            System.exit(0);
+        }
+    }
 }

@@ -26,27 +26,20 @@ public class Gcd {
 
             // build a question and answer for user
             System.out.println("Question: " + firstNumber + " " + secondNumber);
-            int userAnswer = scanner.nextInt();
+            String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
 
             // correct answer
-            int correctAnswer = correctAnswer(firstNumber, secondNumber);
+            String correctAnswer = correctAnswer(firstNumber, secondNumber);
 
             // checking answer
-            if (userAnswer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer
-                        + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Engine.getUserName() + "!");
-                System.exit(0);
-            }
+            Engine.checkAnswer(userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + Engine.getUserName() + "!");
     }
 
     // correct answer
-    public static int correctAnswer(int firstNumber, int secondNumber) {
+    public static String correctAnswer(int firstNumber, int secondNumber) {
         while (firstNumber > 0 && secondNumber > 0) {
             if (firstNumber >= secondNumber) {
                 firstNumber = firstNumber % secondNumber;
@@ -54,6 +47,6 @@ public class Gcd {
                 secondNumber = secondNumber % firstNumber;
             }
         }
-        return Math.max(firstNumber, secondNumber);
+        return Integer.toString(Math.max(firstNumber, secondNumber));
     }
 }

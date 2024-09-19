@@ -29,15 +29,11 @@ public class Even {
             String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
 
+            // correct answer
+            String correctAnswer = correctAnswer(gameNumber);
+
             // checking answer
-            if (correctAnswer(gameNumber).equals(userAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer
-                        + "' is wrong answer ;(. Correct answer was '" + correctAnswer(gameNumber) + "'.");
-                System.out.println("Let's try again, " + Engine.getUserName() + "!");
-                System.exit(0);
-            }
+            Engine.checkAnswer(userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + Engine.getUserName() + "!");
     }

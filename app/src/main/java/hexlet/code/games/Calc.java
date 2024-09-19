@@ -28,24 +28,16 @@ public class Calc {
 
             // build a question and answer for user
             System.out.println("Question: " + firstNumber + " " + operator + " " + secondNumber);
-            int userAnswer = scanner.nextInt();
+            var userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
 
             // correct answer
-            int correctAnswer = correctAnswer(firstNumber, secondNumber, operator);
+            String correctAnswer = correctAnswer(firstNumber, secondNumber, operator);
 
             // checking answer
-            if (userAnswer == correctAnswer) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Engine.getUserName() + "!");
-                System.exit(0);
-            }
+            Engine.checkAnswer(userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + Engine.getUserName() + "!");
-
     }
 
     // generating random operator for game
@@ -66,19 +58,19 @@ public class Calc {
     }
 
     // correct answer
-    public static int correctAnswer(int firstNumber, int secondNumber, char operator) {
+    public static String correctAnswer(int firstNumber, int secondNumber, char operator) {
         switch (operator) {
             case '+' -> {
-                return firstNumber + secondNumber;
+                return Integer.toString(firstNumber + secondNumber);
             }
             case '-' -> {
-                return firstNumber - secondNumber;
+                return Integer.toString(firstNumber - secondNumber);
             }
             case '*' -> {
-                return firstNumber * secondNumber;
+                return Integer.toString(firstNumber * secondNumber);
             }
             default -> {
-                return 0;
+                return "0";
             }
         }
     }
