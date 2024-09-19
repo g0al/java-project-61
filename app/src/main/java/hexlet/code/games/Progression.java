@@ -19,7 +19,7 @@ public class Progression {
         // the mechanism of the game
         for (int i = 0; i < Engine.getGameAttempts(); i++) {
 
-            createProgression();
+            createAndShowProgression();
 
             // getting answer from user
             String userAnswer = scanner.nextLine();
@@ -31,7 +31,7 @@ public class Progression {
         System.out.println("Congratulations, " + Engine.getUserName() + "!");
     }
 
-    public static void createProgression() {
+    public static void createAndShowProgression() {
 
         // determine the parameters of the progression
         final int minNumbersInProgression = 5;
