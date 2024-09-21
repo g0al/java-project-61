@@ -1,11 +1,12 @@
 ## Project "Brain Games"
 
-Education project
+Education project. A set of small console games.
 
-## Hexlet tests and linter status:
+### Hexlet tests and linter status:
 [![Actions Status](https://github.com/g0al/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/g0al/java-project-61/actions)
 
-## Game "Even"
+### Game "Even"
+Determine if the number in front of you is even or not
 
 Successful game
 [![asciicast](https://asciinema.org/a/aow5otXxyneEt5b7k8Xu06Jrr.svg)](https://asciinema.org/a/aow5otXxyneEt5b7k8Xu06Jrr)
@@ -13,36 +14,38 @@ Successful game
 Unsuccessful game
 [![asciicast](https://asciinema.org/a/4OBYWDJCWkzQglpNsk495Xx2a.svg)](https://asciinema.org/a/4OBYWDJCWkzQglpNsk495Xx2a)
 
-## Setup
+### Game "Calc"
+Solve the arithmetic problem
 
-```bash
-make build
-```
+Successful game
+[![asciicast](https://asciinema.org/a/6s9XKyDvgjcIzNFLiOfYttzlI.svg)](https://asciinema.org/a/6s9XKyDvgjcIzNFLiOfYttzlI)
 
-## Run
+Unsuccessful game
+[![asciicast](https://asciinema.org/a/3xDTYwU7a2zc1VF8nxoo7JChW.svg)](https://asciinema.org/a/3xDTYwU7a2zc1VF8nxoo7JChW)
 
-```bash
-make run
-```
+### Game "GCD"
+Find the Greatest common divisor
 
-## Run tests
+Successful game
+[![asciicast](https://asciinema.org/a/hCIr8P8UObHw9MojVGKiBWaaD.svg)](https://asciinema.org/a/hCIr8P8UObHw9MojVGKiBWaaD)
 
-```bash
-make test
-```
+Unsuccessful game
+[![asciicast](https://asciinema.org/a/mzhs8Hxd1tjHBZGPkInE3DwN7.svg)](https://asciinema.org/a/mzhs8Hxd1tjHBZGPkInE3DwN7)
 
-## Run checkstyle
+### Game "Progression"
+Insert the desired number
 
-```bash
-make lint
-```
+Successful game
+[![asciicast](https://asciinema.org/a/o6lQGoAJPDOvqQcNjZqDgnGA1.svg)](https://asciinema.org/a/o6lQGoAJPDOvqQcNjZqDgnGA1)
 
-## Check update dependencies and plugins
+Unsuccessful game
+[![asciicast](https://asciinema.org/a/AZccnvnc0c9AJTmopHAhzxvtF.svg)](https://asciinema.org/a/AZccnvnc0c9AJTmopHAhzxvtF)
 
-```bash
-make update
-```
+### Game "Prime"
+Define a prime number
 
-## asdf
+Successful game
+[![asciicast](https://asciinema.org/a/Fh0ne42XBoRQSL1i0R0mgCHif.svg)](https://asciinema.org/a/Fh0ne42XBoRQSL1i0R0mgCHif)
 
-On *nix and macOS to manage Java versions we recommend using asdf https://github.com/asdf-vm/asdf. 
+Unsuccessful game
+[![asciicast](https://asciinema.org/a/ENRtvrQfg4wTnu0eepgWplz7F.svg)](https://asciinema.org/a/ENRtvrQfg4wTnu0eepgWplz7F)
