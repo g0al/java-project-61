@@ -7,9 +7,11 @@ Education project
 
 ## Game "Even"
 
+Successful game
 [![asciicast](https://asciinema.org/a/aow5otXxyneEt5b7k8Xu06Jrr.svg)](https://asciinema.org/a/aow5otXxyneEt5b7k8Xu06Jrr)
 
-<script src="https://asciinema.org/a/4OBYWDJCWkzQglpNsk495Xx2a.js" id="asciicast-4OBYWDJCWkzQglpNsk495Xx2a" async="true"></script>
+Unsuccessful game
+[![asciicast](https://asciinema.org/a/4OBYWDJCWkzQglpNsk495Xx2a.svg)](https://asciinema.org/a/4OBYWDJCWkzQglpNsk495Xx2a)
 
 ## Setup
 
