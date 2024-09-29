@@ -1,45 +1,29 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Util;
 
 public class Prime {
-
     public static void startGame() {
+        // determine the parameters of game
+        final int maxGameNumber = 100;
+        final String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[] questions = new String[3];
+        String[] correctAnswers = new String[3];
 
-        Scanner scanner = new Scanner(System.in);
-
-        // greeting and asking user
-        Engine.userGreeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        // the mechanism of the game
+        // generating answers and questions
         for (int i = 0; i < Engine.getGameAttempts(); i++) {
+            int gameNumber = Util.generateRandomNumber(0, maxGameNumber);
 
-            // determine the parameters of number
-            final int maxGameNumber = 100;
-
-            // generating random number for game
-            int gameNumber = Engine.generateRandomNumber(0, maxGameNumber);
-
-            // build a question and answer for user
-            System.out.println("Question: " + gameNumber);
-            String userAnswer = scanner.nextLine();
-            System.out.println("Your answer: " + userAnswer);
-
-            // correct answer
-            String correctAnswer = correctAnswer(gameNumber);
-
-            // checking answer
-            Engine.checkAnswer(userAnswer, correctAnswer);
+            // preparing data for engine
+            questions[i] = String.valueOf(gameNumber);
+            correctAnswers[i] = correctAnswer(gameNumber);
         }
-        System.out.println("Congratulations, " + Engine.getUserName() + "!");
+        Engine.game(description, questions, correctAnswers);
     }
 
-    // correct answer
+    // finding correct answer
     public static String correctAnswer(int number) {
-
         if (number < 2) {
             return "no";
         }
