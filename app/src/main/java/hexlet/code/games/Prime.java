@@ -6,13 +6,14 @@ import hexlet.code.Util;
 public class Prime {
     public static void startGame() {
         // determine the parameters of game
+        int attempts = Engine.getGameAttempts();
         final int maxGameNumber = 100;
         final String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] questions = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questions = new String[attempts];
+        String[] correctAnswers = new String[attempts];
 
         // generating answers and questions
-        for (int i = 0; i < Engine.getGameAttempts(); i++) {
+        for (int i = 0; i < attempts; i++) {
             int gameNumber = Util.generateRandomNumber(0, maxGameNumber);
 
             // preparing data for engine

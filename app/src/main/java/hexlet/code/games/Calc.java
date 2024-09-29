@@ -6,14 +6,15 @@ import hexlet.code.Util;
 public class Calc {
     public static void startGame() {
         // determine the parameters of game
+        int attempts = Engine.getGameAttempts();
         final int minGameNumber = -100;
         final int maxGameNumber = 100;
         final String description = "What is the result of the expression?";
-        String[] questions = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questions = new String[attempts];
+        String[] correctAnswers = new String[attempts];
 
         // generating answers and questions
-        for (int i = 0; i < Engine.getGameAttempts(); i++) {
+        for (int i = 0; i < attempts; i++) {
             // generating random numbers and operator for game
             int firstNumber = Util.generateRandomNumber(minGameNumber, maxGameNumber);
             int secondNumber = Util.generateRandomNumber(minGameNumber, maxGameNumber);

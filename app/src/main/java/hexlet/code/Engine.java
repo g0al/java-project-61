@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Engine {
     private static String userName;
     private static final int GAME_ATTEMPTS = 3;
-    static Scanner scanner = new Scanner(System.in);
 
     public static int getGameAttempts() {
         return GAME_ATTEMPTS;
     }
 
     public static void game(String description, String[] questions, String[] correctAnswers) {
+        Scanner scanner = new Scanner(System.in);
         userGreeting(description);
         for (int i = 0; i < GAME_ATTEMPTS; i++) {
             System.out.println("Question: " + questions[i]);
@@ -23,6 +23,7 @@ public class Engine {
     }
 
     public static void userGreeting(String description) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("""
         Welcome to the Brain Games!
         May I have your name?""");

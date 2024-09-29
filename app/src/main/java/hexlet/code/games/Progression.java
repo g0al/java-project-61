@@ -6,6 +6,7 @@ import hexlet.code.Util;
 public class Progression {
     public static void startGame() {
         // determine the parameters of game
+        int attempts = Engine.getGameAttempts();
         final int minNumbersInProgression = 5;
         final int maxNumbersInProgression = 10;
         final int minFirstNumber = 1;
@@ -13,11 +14,11 @@ public class Progression {
         final int minStep = 2;
         final int maxStep = 5;
         final String description = "What number is missing in the progression?";
-        String[] questions = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questions = new String[attempts];
+        String[] correctAnswers = new String[attempts];
 
         // generating answers and questions
-        for (int i = 0; i < Engine.getGameAttempts(); i++) {
+        for (int i = 0; i < attempts; i++) {
             // progression parameters
             int numbersInProgression = Util.generateRandomNumber(minNumbersInProgression,
                     maxNumbersInProgression);
