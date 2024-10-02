@@ -12,7 +12,9 @@ public class Engine {
 
     public static void game(String description, String[] questions, String[] correctAnswers) {
         Scanner scanner = new Scanner(System.in);
+
         userGreeting(description);
+
         for (int i = 0; i < GAME_ATTEMPTS; i++) {
             System.out.println("Question: " + questions[i]);
             String answer = scanner.nextLine();
@@ -24,6 +26,7 @@ public class Engine {
 
     public static void userGreeting(String description) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("""
         Welcome to the Brain Games!
         May I have your name?""");

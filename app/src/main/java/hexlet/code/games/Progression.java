@@ -33,6 +33,7 @@ public class Progression {
                 numbers[k] = numbers[k - 1] + step;
             }
 
+            // creating string for progression
             StringBuilder question = new StringBuilder("Question: ");
             for (int j = 0; j < numbers.length; j++) {
                 if (j != missingNumberIndex) {
