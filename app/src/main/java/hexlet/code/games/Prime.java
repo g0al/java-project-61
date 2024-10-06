@@ -6,33 +6,32 @@ import hexlet.code.Util;
 public class Prime {
     public static void startGame() {
         // determine the parameters of game
-        int attempts = Engine.getGameAttempts();
+        int attempts = Engine.GAME_ATTEMPTS;
         final int maxGameNumber = 100;
         final String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] questions = new String[attempts];
-        String[] correctAnswers = new String[attempts];
+        String[][] data = new String[attempts][2];
 
         // generating answers and questions
         for (int i = 0; i < attempts; i++) {
             int gameNumber = Util.generateRandomNumber(0, maxGameNumber);
 
             // preparing data for engine
-            questions[i] = String.valueOf(gameNumber);
-            correctAnswers[i] = correctAnswer(gameNumber);
+            data[i][0] = String.valueOf(gameNumber);
+            data[i][1] = (isPrime(gameNumber)) ? "yes" : "no";
         }
-        Engine.game(description, questions, correctAnswers);
+        Engine.runGame(description, data);
     }
 
-    // finding correct answer
-    public static String correctAnswer(int number) {
+    // checking answer
+    public static boolean isPrime(int number) {
         if (number < 2) {
-            return "no";
+            return false;
         }
         for (int j = 2; j <= Math.sqrt(number); j++) {
             if (number % j == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }

@@ -23,7 +23,7 @@ public class App {
         6 - Prime
         0 - Exit""");
 
-        // choosing a game
+        // choosing a runGame
         String userChoice = scanner.nextLine();
         System.out.println("Your choice: " + userChoice);
         switch (userChoice) {

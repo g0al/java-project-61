@@ -5,12 +5,11 @@ import hexlet.code.Util;
 
 public class Gcd {
     public static void startGame() {
-        // determine the parameters of game
-        int attempts = Engine.getGameAttempts();
+        // determine the parameters of runGame
+        int attempts = Engine.GAME_ATTEMPTS;
         final int maxGameNumber = 100;
         final String description = "Find the greatest common divisor of given numbers.";
-        String[] questions = new String[attempts];
-        String[] correctAnswers = new String[attempts];
+        String[][] data = new String[attempts][2];
 
         // generating answers and questions
         for (int i = 0; i < attempts; i++) {
@@ -19,25 +18,22 @@ public class Gcd {
             int firstNumber = Util.generateRandomNumber(0, maxGameNumber);
             int secondNumber = Util.generateRandomNumber(0, maxGameNumber);
 
-            // getting correct answer
-            String correctAnswer = correctAnswer(firstNumber, secondNumber);
-
             // preparing data for engine
-            questions[i] = firstNumber + " " + secondNumber;
-            correctAnswers[i] = correctAnswer;
+            data[i][0] = firstNumber + " " + secondNumber;
+            data[i][1] = Integer.toString(calculate(firstNumber, secondNumber));
         }
-        Engine.game(description, questions, correctAnswers);
+        Engine.runGame(description, data);
     }
 
-    // finding correct answer
-    public static String correctAnswer(int firstNumber, int secondNumber) {
-        while (firstNumber > 0 && secondNumber > 0) {
-            if (firstNumber >= secondNumber) {
-                firstNumber = firstNumber % secondNumber;
+    // checking answer
+    public static int calculate(int a, int b) {
+        while (a > 0 && b > 0) {
+            if (a >= b) {
+                a = a % b;
             } else {
-                secondNumber = secondNumber % firstNumber;
+                b = b % a;
             }
         }
-        return Integer.toString(Math.max(firstNumber, secondNumber));
+        return Math.max(a, b);
     }
 }

@@ -5,36 +5,28 @@ import hexlet.code.Util;
 
 public class Even {
     public static void startGame() {
-        // determine the parameters of game
-        int attempts = Engine.getGameAttempts();
+        // determine the parameters of runGame
+        int attempts = Engine.GAME_ATTEMPTS;
         final int minGameNumber = 0;
         final int maxGameNumber = 100;
         final String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] questions = new String[attempts];
-        String[] correctAnswers = new String[attempts];
+        String[][] data = new String[attempts][2];
 
         // generating answers and questions
         for (int i = 0; i < attempts; i++) {
 
-            // generating random number for game
+            // generating random number for runGame
             int gameNumber = Util.generateRandomNumber(minGameNumber, maxGameNumber);
 
-            // getting correct answer
-            String correctAnswer = correctAnswer(gameNumber);
-
             // preparing data for engine
-            questions[i] = String.valueOf(gameNumber);
-            correctAnswers[i] = correctAnswer;
+            data[i][0] = String.valueOf(gameNumber);
+            data[i][1] = (isEven(gameNumber)) ? "yes" : "no";
         }
-        Engine.game(description, questions, correctAnswers);
+        Engine.runGame(description, data);
     }
 
-    // finding correct answer
-    public static String correctAnswer(int number) {
-        if (number % 2 == 0) {
-            return "yes";
-        } else {
-            return "no";
-        }
+    // checking answer
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
