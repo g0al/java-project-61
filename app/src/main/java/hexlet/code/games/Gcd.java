@@ -11,7 +11,7 @@ public class Gcd {
         final String description = "Find the greatest common divisor of given numbers.";
         String[][] data = new String[attempts][2];
 
-        // generating answers and questions
+        // generating answers and questions for engine
         for (int i = 0; i < attempts; i++) {
 
             // generating two random numbers for game

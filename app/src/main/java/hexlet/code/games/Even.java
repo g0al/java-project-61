@@ -12,7 +12,7 @@ public class Even {
         final String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] data = new String[attempts][2];
 
-        // generating answers and questions
+        // generating answers and questions for engine
         for (int i = 0; i < attempts; i++) {
 
             // generating random number for runGame

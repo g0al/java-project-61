@@ -5,7 +5,7 @@ import hexlet.code.Util;
 
 public class Progression {
     public static void startGame() {
-        // determine the parameters of runGame
+        // determine the parameters of game
         int attempts = Engine.GAME_ATTEMPTS;
         final String description = "What number is missing in the progression?";
         String[][] data = new String[attempts][2];
@@ -24,6 +24,7 @@ public class Progression {
                     question.append(".. ");
                 }
             }
+
             // preparing data for engine
             data[i][0] = String.valueOf(question);
             data[i][1] = String.valueOf(numbers[missingNumberIndex]);
@@ -31,6 +32,7 @@ public class Progression {
         Engine.runGame(description, data);
     }
 
+    // creating array of numbers for progression
     public static int[] generateProgression() {
         // progression settings
         final int minNumbersInProgression = 5;

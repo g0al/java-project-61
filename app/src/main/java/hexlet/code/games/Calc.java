@@ -13,7 +13,7 @@ public class Calc {
         final String description = "What is the result of the expression?";
         String[][] data = new String[attempts][2];
 
-        // generating answers and questions
+        // generating answers and questions for engine
         for (int i = 0; i < attempts; i++) {
             // generating random numbers and operator for game
             int firstNumber = Util.generateRandomNumber(minGameNumber, maxGameNumber);

@@ -11,7 +11,7 @@ public class Prime {
         final String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] data = new String[attempts][2];
 
-        // generating answers and questions
+        // generating answers and questions for engine
         for (int i = 0; i < attempts; i++) {
             int gameNumber = Util.generateRandomNumber(0, maxGameNumber);
 
@@ -27,8 +27,8 @@ public class Prime {
         if (number < 2) {
             return false;
         }
-        for (int j = 2; j <= Math.sqrt(number); j++) {
-            if (number % j == 0) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
